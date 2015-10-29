@@ -11,10 +11,13 @@ From the original jQuery creator:
 
 ## Install
 Currently not registered on bower, but you can still install with bower. Add to your bower.json dependencies eg:
-
-"dependencies": {
-    "angular-send-feedback-detect"     : "https://github.com/darcyclarke/Detect.js.git",
-
+````
+...
+   "dependencies": {
+       "angular-send-feedback-detect"     : "https://github.com/johnc1984/angular-send-feedback-detect.git"
+   }
+...
+````
 
 ## Dependencies
 
