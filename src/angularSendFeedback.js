@@ -150,15 +150,7 @@ angular.module('angular-send-feedback').directive('angularFeedback', [ function(
                                 post        = {};
 
                                 if (settings.postBrowserInfo) {
-                                    post.browser                = {};
-                                    post.browser.appCodeName    = navigator.appCodeName;
-                                    post.browser.appName        = navigator.appName;
-                                    post.browser.appVersion     = navigator.appVersion;
-                                    post.browser.cookieEnabled  = navigator.cookieEnabled;
-                                    post.browser.onLine         = navigator.onLine;
-                                    post.browser.platform       = navigator.platform;
-                                    post.browser.userAgent      = navigator.userAgent;
-                                    post.browser.plugins        = [];
+                                    post.browser                = detect.parse(navigator.userAgent);
 
                                     $.each(navigator.plugins, function(i) {
                                         post.browser.plugins.push(navigator.plugins[i].name);

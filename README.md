@@ -16,8 +16,18 @@ This directive was built using [ivoviz's](http://github.com/ivoviz) feedback rep
 
 * jQuery
 * html2canvas
+* Detect.js
 
-## Use
+## To Install and Use
+
+1 - Include the dependencies to you html
+		jQuery
+		html2canvas
+		Detect.js
+2 - include the minified js and css
+		dist/angular-send-feedback.min.js
+		angular-send-feedback.min.css
+		
 
 Add as a dependency to your application:
 
