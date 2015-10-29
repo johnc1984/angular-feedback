@@ -1,16 +1,20 @@
-# angular-feedback
+# angular-send-feedback-detect
 
 Feedback directive similar to Google Feedback
 
 This directive was built using [ivoviz's](http://github.com/ivoviz) feedback repo.
+I have modified it slightly by adding the use of the [detectjs library](https://github.com/darcyclarke/Detect.js). When the user hits submit, instead of just sending the user agent string, detectjs does the hard work of calculating the users browser and sends a nice understandable object instead.
 
 ## Demo
-
-[http://jacobscarter.github.io/angular-feedback/](http://jacobscarter.github.io/angular-feedback/)
+From the original jQuery creator:
+[http://ivoviz.github.io/feedback/](http://ivoviz.github.io/feedback/) - Click "Send feedback" at the bottom right of the page.
 
 ## Install
+Currently not registered on bower, but you can still install with bower. Add to your bower.json dependencies eg:
 
-`bower install angular-send-feedback`
+"dependencies": {
+    "angular-send-feedback-detect"     : "https://github.com/darcyclarke/Detect.js.git",
+
 
 ## Dependencies
 
@@ -20,7 +24,7 @@ This directive was built using [ivoviz's](http://github.com/ivoviz) feedback rep
 
 ## To Install and Use
 
-1 - Include the dependencies to you html
+1 - Include the dependencies to your html from the bower components
 		jQuery
 		html2canvas
 		Detect.js
@@ -28,16 +32,32 @@ This directive was built using [ivoviz's](http://github.com/ivoviz) feedback rep
 		dist/angular-send-feedback.min.js
 		angular-send-feedback.min.css
 		
-
 Add as a dependency to your application:
+````
+yourApp.module('myApp', [
+	'angular-send-feedback-detect'
+]);
+````
 
-`angular.module('myApp', ['angular-send-feedback']);`
+Add directive to your HTML eg:
+````
+<div ng-controller="feedbackController">
+	<angular-feedback options="options"></angular-feedback>
+</div>
+````
 
-Add directive to your HTML:
-
-`<angular-feedback options="options"></angular-feedback>`
-
-The options attribute is connected to a `$scope` value in your controller, you can use this object to change/modify any of the options listed below.
+The options attribute is connected to a `$scope` value in your controller, you can use this object to change/modify any of the options listed below. EG:
+```
+yourApp.controller('feedbackController', ['$scope', function( $scope ) {
+	$scope.options = {
+		html2canvasURL	: 'bower_components/html2canvas/build/html2canvas.js',
+		ajaxURL			: '/api/feedback/give/',
+		postHTML		: false,
+		highlightElement: false,
+		initButtonText	: 'Found a bug?'
+	};
+}]);
+```
 
 ## Post Data
 

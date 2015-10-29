@@ -4,6 +4,7 @@
  * @author John Carmichael <johncarmichael1984@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
+
 angular.module('templates-angularsendfeedback', ['angularsendfeedback.html']);
 
 angular.module("angularsendfeedback.html", []).run(["$templateCache", function($templateCache) {
@@ -11,9 +12,9 @@ angular.module("angularsendfeedback.html", []).run(["$templateCache", function($
     "");
 }]);
 
-angular.module('angular-send-feedback', ['templates-angularsendfeedback']);
+angular.module('angular-send-feedback-detect', ['templates-angularsendfeedback']);
 
-angular.module('angular-send-feedback').directive('angularFeedback', [ function() {
+angular.module('angular-send-feedback-detect').directive('angularFeedback', [ function() {
 
 
     return {
