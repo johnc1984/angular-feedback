@@ -1,17 +1,17 @@
 {
   "name"        : "angular-send-feedback",
-  "version"     : "1.0.2",
+  "version"     : "1.0.3",
   "main"        : "./dist/angular-send-feedback.min.js",
   "description" : "Angular feedback directive similar to Google Feedback",
   "repository"  : {
     "type"  : "git",
-    "url"   : "git://github.com/jacobscarter/angular-feedback.git"
+    "url"   : "git://github.com/johnc1984/angular-send-feedback-detect.git"
   },
   "dependencies": {
     "angular"     : "<2",
+    "detectjs"    : "git://github.com/darcyclarke/Detect.js.git",
     "jquery"      : "*",
-    "html2canvas" : "*",
-    "detectjs"    : "https://github.com/darcyclarke/Detect.js.git"
+    "html2canvas" : "*"
   },
   "ignore"      : [
     "node_modules",
